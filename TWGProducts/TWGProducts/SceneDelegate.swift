@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -22,7 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let nav = UINavigationController(rootViewController: productsRouter.entry!)
         let initialVC = nav
-//        let initialVC = productsRouter.entry
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = initialVC
         self.window = window
