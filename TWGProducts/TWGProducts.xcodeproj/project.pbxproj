@@ -23,6 +23,8 @@
 		78AA04A72705930A00F31EC8 /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA04A62705930A00F31EC8 /* ProductsInteractor.swift */; };
 		78AA04AD2705941900F31EC8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA04AC2705941900F31EC8 /* SearchResult.swift */; };
 		78AA04C427059C5100F31EC8 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA04C327059C5100F31EC8 /* ProductsViewController.swift */; };
+		78AA04F92706681700F31EC8 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA04F82706681700F31EC8 /* ApiManager.swift */; };
+		78AA05012706688400F31EC8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA05002706688400F31EC8 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		78AA04A62705930A00F31EC8 /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
 		78AA04AC2705941900F31EC8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		78AA04C327059C5100F31EC8 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		78AA04F82706681700F31EC8 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		78AA05002706688400F31EC8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				78AA044C27058F9900F31EC8 /* SceneDelegate.swift */,
 				78AA047D2705908B00F31EC8 /* Protocol */,
 				78AA04AB2705940000F31EC8 /* Model */,
+				78AA04EC2705ACD200F31EC8 /* Network */,
 				78AA04912705914700F31EC8 /* Module */,
 				78AA045027058F9900F31EC8 /* Main.storyboard */,
 				78AA045327058FA200F31EC8 /* Assets.xcassets */,
@@ -180,8 +185,17 @@
 			isa = PBXGroup;
 			children = (
 				78AA04AC2705941900F31EC8 /* SearchResult.swift */,
+				78AA05002706688400F31EC8 /* Product.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		78AA04EC2705ACD200F31EC8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				78AA04F82706681700F31EC8 /* ApiManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +332,7 @@
 				78AA048A270590E000F31EC8 /* Routerable.swift in Sources */,
 				78AA047F2705909700F31EC8 /* Viewable.swift in Sources */,
 				78AA044B27058F9900F31EC8 /* AppDelegate.swift in Sources */,
+				78AA04F92706681700F31EC8 /* ApiManager.swift in Sources */,
 				78AA04C427059C5100F31EC8 /* ProductsViewController.swift in Sources */,
 				78AA044D27058F9900F31EC8 /* SceneDelegate.swift in Sources */,
 				78AA0488270590E000F31EC8 /* Interactorable.swift in Sources */,
@@ -325,6 +340,7 @@
 				78AA049A2705929900F31EC8 /* ProductsPresenter.swift in Sources */,
 				78AA0487270590E000F31EC8 /* Presenterable.swift in Sources */,
 				78AA04A2270592FB00F31EC8 /* ProductsRouter.swift in Sources */,
+				78AA05012706688400F31EC8 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

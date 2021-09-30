@@ -13,22 +13,31 @@ class ProductsViewController: UIViewController, Viewable {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
     
     @IBAction func onTapBarcodeScanner(_ sender: Any) {
         
     }
     
-    func didRecieveData(with data: SearchResult) {
-
+    func didRecieveData(with data: SearchResult?) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func didRecieveError(with error: Error) {
-        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
-    
+}
+
+extension ProductsViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        presenter?.onSearchProducts(forText: searchBar.text)
+        searchBar.endEditing(true)
+    }
 }
 
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -37,12 +46,12 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.presenter?.searchResult?.result?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath)
-        cell.textLabel?.text = "Dummy text \(indexPath.row)"
+        cell.textLabel?.text = self.presenter?.searchResult?.result?[indexPath.row].description
         return cell
     }
 }

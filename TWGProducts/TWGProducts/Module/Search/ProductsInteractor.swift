@@ -9,4 +9,9 @@ import Foundation
 
 class ProductsInteractor: Interactorable {
     weak var presenter: ProductsPresenter?
+    func searchProducts(forText text: String) {
+        URLSession.shared.request(.search(for: text), type: SearchResult.self) { items in
+            self.presenter?.didRecieveData(with: items)
+        }
+    }
 }
