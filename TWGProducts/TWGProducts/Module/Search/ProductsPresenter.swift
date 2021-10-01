@@ -27,6 +27,11 @@ class ProductsPresenter: Presenterable {
             view?.didRecieveError(with:error)
         }
     }
-
+    
+    func onSelectProduct(withItem item: Item) {
+        let selectedEntity = Product(withBarcode: item.products!.first!.barcode, description: item.description, imageUrl: item.products?.first?.imageUrl ?? nil, price: nil)
+        router!.presentDetail(forEntity: selectedEntity)
+    }
+    
     
 }

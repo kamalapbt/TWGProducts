@@ -26,4 +26,8 @@ class ProductsRouter: Routerable {
     
         self.entry = view
     }
+    func presentDetail(forEntity item: Product) {
+        let detailRouter: ProductDetailRouter = ProductDetailRouter(withEntity: item)
+        entry!.navigationController?.pushViewController(detailRouter.entry!, animated: true)
+    }
 }

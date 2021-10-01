@@ -54,4 +54,10 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = self.presenter?.searchResult?.result?[indexPath.row].description
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let resultItem =  self.presenter?.searchResult?.result?[indexPath.row] else {
+            return
+        }
+        self.presenter?.onSelectProduct(withItem: resultItem)
+    }
 }

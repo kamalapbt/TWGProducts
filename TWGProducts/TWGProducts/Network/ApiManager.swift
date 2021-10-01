@@ -10,7 +10,7 @@ import Foundation
 enum ApiError: Error {
     case invalidRequest
     case unKnown
-}
+ }
 
 struct Endpoint {
     var path: String
@@ -35,18 +35,26 @@ extension Endpoint {
             name: "MachinID",
             value: "<NEED-TO-PROVIDE-VALUE>"
         )]+queryItems
-        
+
         guard let url = components.url else {
             preconditionFailure(
                 "Invalid URL components: \(components)"
             )
         }
-        
+
         return url
     }
 }
 
 extension Endpoint {
+    static func product(withBarcode code: String) -> Self {
+        Endpoint(path: "price.json",
+                 queryItems: [URLQueryItem(
+                     name: "Barcode",
+                     value: code
+                 )])
+    }
+
     static func search(for query: String) -> Self {
         Endpoint(
             path: "search.json",
@@ -84,5 +92,21 @@ extension URLSession {
         task.resume()
         return task
     }
-    
+
+    func getResourse(
+        fromUrl url: URL,
+        mode: Mode,
+        completionHandler: @escaping (Result<Resource, Error>) -> Void
+    ) -> URLSessionDataTask{
+        let task = dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                completionHandler(.failure(ApiError.unKnown))
+                return
+            }
+            completionHandler(.success(Resource(mode: mode, data: data)))
+        }
+        task.resume()
+        
+        return task
+    }
 }

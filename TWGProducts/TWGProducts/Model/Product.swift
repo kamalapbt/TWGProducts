@@ -18,4 +18,10 @@ struct Product: Codable {
         case description = "Description"
         case price = "Price"
     }
+    init(withBarcode code: String, description textDescription: String?, imageUrl textImageUrl: String?, price textPrice: String?) {
+        barcode = code
+        description = textDescription
+        imageUrl = textImageUrl
+        price = textPrice
+    }
 }
