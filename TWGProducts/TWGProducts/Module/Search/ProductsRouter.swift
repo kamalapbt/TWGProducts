@@ -18,7 +18,7 @@ class ProductsRouter: Routerable {
 
         view.presenter = presenter
 
-        interactor.presenter = presenter
+        interactor.output = presenter
 
         presenter.view = view
         presenter.interactor = interactor
@@ -26,8 +26,15 @@ class ProductsRouter: Routerable {
     
         self.entry = view
     }
+    
     func presentDetail(forEntity item: Product) {
         let detailRouter: ProductDetailRouter = ProductDetailRouter(withEntity: item)
         entry!.navigationController?.pushViewController(detailRouter.entry!, animated: true)
+    }
+    
+    func presentBarcodeScanner() {
+        let barcodeScannerRouter: BarcodeScannerRouter = BarcodeScannerRouter()
+        let nav = UINavigationController(rootViewController: barcodeScannerRouter.entry!)
+        entry!.present(nav, animated: true, completion: nil)
     }
 }

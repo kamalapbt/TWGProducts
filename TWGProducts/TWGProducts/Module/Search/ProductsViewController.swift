@@ -16,7 +16,7 @@ class ProductsViewController: UIViewController, Viewable {
     }
     
     @IBAction func onTapBarcodeScanner(_ sender: Any) {
-        
+        self.presenter?.showScanner()
     }
     
     func didRecieveData(with data: SearchResult?) {

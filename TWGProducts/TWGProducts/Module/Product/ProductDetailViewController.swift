@@ -20,14 +20,7 @@ class ProductDetailViewController: UIViewController, Viewable {
         setViewProductDetails()
     }
     
-    
     func didRecieveError(with error: Error) {
-        DispatchQueue.main.async() { [weak self] in
-            let alert = UIAlertController(title: "Sorry cannot get the data.", message: error.localizedDescription, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self?.present(alert, animated: true)
-        }
-
     }
     
     func didRecieveData(with data: Any) {
@@ -40,7 +33,6 @@ class ProductDetailViewController: UIViewController, Viewable {
             DispatchQueue.main.async() { [weak self] in
                 self?.imageProduct.image = UIImage(data: imageData)
             }
-            
         }
     }
     

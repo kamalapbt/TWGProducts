@@ -21,10 +21,17 @@ class ProductDetailRouter: Routerable {
         
         view.presenter = presenter
 
-        interactor.presenter = presenter
+        interactor.output = presenter
 
         presenter.view = view
         presenter.interactor = interactor
+        presenter.router = self
         self.entry = view
+    }
+    
+    func showAlert(for error: Error) {
+        let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.entry?.present(alert, animated: true, completion: nil)
     }
 }

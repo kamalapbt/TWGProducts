@@ -26,7 +26,7 @@ class ProductDetailPresenter: Presenterable {
                 view?.didRecieveData(with: data)
                 break
             case .failure(let error):
-                view?.didRecieveError(with:error)
+                router?.showAlert(for: error)
         }
     }
     
@@ -35,9 +35,7 @@ class ProductDetailPresenter: Presenterable {
     }
     
     func loadImage(fromUrl text: String) {
-//        if let urlText = text {
-            interactor?.downloadImage(from: text)
-//        }
+        interactor?.downloadImage(from: text)
     }
     
     func finishedImageDownload(withData data: Data) {

@@ -33,5 +33,7 @@ class ProductsPresenter: Presenterable {
         router!.presentDetail(forEntity: selectedEntity)
     }
     
-    
+    func showScanner() {
+        router!.presentBarcodeScanner()
+    }
 }

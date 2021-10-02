@@ -8,10 +8,10 @@
 import Foundation
 
 class ProductsInteractor: Interactorable {
-    weak var presenter: ProductsPresenter?
+    weak var output: ProductsPresenter?
     func searchProducts(forText text: String) {
         URLSession.shared.request(.search(for: text), type: SearchResult.self) { items in
-            self.presenter?.didRecieveData(with: items)
+            self.output?.didRecieveData(with: items)
         }
     }
 }

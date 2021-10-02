@@ -30,6 +30,15 @@
 		78AA0514270678B900F31EC8 /* ProductDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA0513270678B900F31EC8 /* ProductDetailInteractor.swift */; };
 		78AA0519270678CA00F31EC8 /* ProductDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA0518270678CA00F31EC8 /* ProductDetailRouter.swift */; };
 		78AA05212706923600F31EC8 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA05202706923600F31EC8 /* Resource.swift */; };
+		78AA052D2706B0D900F31EC8 /* BarcodeScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA05292706B0D900F31EC8 /* BarcodeScannerPresenter.swift */; };
+		78AA052E2706B0D900F31EC8 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA052A2706B0D900F31EC8 /* BarcodeScannerViewController.swift */; };
+		78AA052F2706B0D900F31EC8 /* BarcodeScannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA052B2706B0D900F31EC8 /* BarcodeScannerInteractor.swift */; };
+		78AA05302706B0D900F31EC8 /* BarcodeScannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA052C2706B0D900F31EC8 /* BarcodeScannerRouter.swift */; };
+		78AA055B2709275700F31EC8 /* ProductsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA055A2709275700F31EC8 /* ProductsPresenterTests.swift */; };
+		78AA05622709276500F31EC8 /* ProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA04992705929900F31EC8 /* ProductsPresenter.swift */; };
+		78AA05662709276E00F31EC8 /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA04A62705930A00F31EC8 /* ProductsInteractor.swift */; };
+		78AA056A2709277100F31EC8 /* ProductsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA04A1270592FB00F31EC8 /* ProductsRouter.swift */; };
+		78AA056E2709277400F31EC8 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA04C327059C5100F31EC8 /* ProductsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +88,11 @@
 		78AA0513270678B900F31EC8 /* ProductDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInteractor.swift; sourceTree = "<group>"; };
 		78AA0518270678CA00F31EC8 /* ProductDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRouter.swift; sourceTree = "<group>"; };
 		78AA05202706923600F31EC8 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		78AA05292706B0D900F31EC8 /* BarcodeScannerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerPresenter.swift; sourceTree = "<group>"; };
+		78AA052A2706B0D900F31EC8 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		78AA052B2706B0D900F31EC8 /* BarcodeScannerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerInteractor.swift; sourceTree = "<group>"; };
+		78AA052C2706B0D900F31EC8 /* BarcodeScannerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerRouter.swift; sourceTree = "<group>"; };
+		78AA055A2709275700F31EC8 /* ProductsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +160,7 @@
 		78AA046027058FA300F31EC8 /* TWGProductsTests */ = {
 			isa = PBXGroup;
 			children = (
+				78AA05582709273100F31EC8 /* Module */,
 				78AA046127058FA300F31EC8 /* TWGProductsTests.swift */,
 				78AA046327058FA300F31EC8 /* Info.plist */,
 			);
@@ -175,6 +190,7 @@
 		78AA04912705914700F31EC8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				78AA05282706B0B400F31EC8 /* Scanner */,
 				78AA05052706743D00F31EC8 /* Product */,
 				78AA04982705927100F31EC8 /* Search */,
 			);
@@ -184,10 +200,10 @@
 		78AA04982705927100F31EC8 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				78AA04C327059C5100F31EC8 /* ProductsViewController.swift */,
+				78AA04A62705930A00F31EC8 /* ProductsInteractor.swift */,
 				78AA04992705929900F31EC8 /* ProductsPresenter.swift */,
 				78AA04A1270592FB00F31EC8 /* ProductsRouter.swift */,
-				78AA04A62705930A00F31EC8 /* ProductsInteractor.swift */,
+				78AA04C327059C5100F31EC8 /* ProductsViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -213,12 +229,40 @@
 		78AA05052706743D00F31EC8 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				78AA05092706783900F31EC8 /* ProductDetailViewController.swift */,
-				78AA050E2706785300F31EC8 /* ProductDetailPresenter.swift */,
 				78AA0513270678B900F31EC8 /* ProductDetailInteractor.swift */,
+				78AA050E2706785300F31EC8 /* ProductDetailPresenter.swift */,
 				78AA0518270678CA00F31EC8 /* ProductDetailRouter.swift */,
+				78AA05092706783900F31EC8 /* ProductDetailViewController.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		78AA05282706B0B400F31EC8 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				78AA052B2706B0D900F31EC8 /* BarcodeScannerInteractor.swift */,
+				78AA05292706B0D900F31EC8 /* BarcodeScannerPresenter.swift */,
+				78AA052C2706B0D900F31EC8 /* BarcodeScannerRouter.swift */,
+				78AA052A2706B0D900F31EC8 /* BarcodeScannerViewController.swift */,
+			);
+			name = Scanner;
+			path = TWGProducts/Module/Scanner;
+			sourceTree = SOURCE_ROOT;
+		};
+		78AA05582709273100F31EC8 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				78AA05592709273100F31EC8 /* Search */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		78AA05592709273100F31EC8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				78AA055A2709275700F31EC8 /* ProductsPresenterTests.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,7 +405,9 @@
 				78AA044D27058F9900F31EC8 /* SceneDelegate.swift in Sources */,
 				78AA0514270678B900F31EC8 /* ProductDetailInteractor.swift in Sources */,
 				78AA05212706923600F31EC8 /* Resource.swift in Sources */,
+				78AA052E2706B0D900F31EC8 /* BarcodeScannerViewController.swift in Sources */,
 				78AA0488270590E000F31EC8 /* Interactorable.swift in Sources */,
+				78AA052F2706B0D900F31EC8 /* BarcodeScannerInteractor.swift in Sources */,
 				78AA04A72705930A00F31EC8 /* ProductsInteractor.swift in Sources */,
 				78AA050A2706783900F31EC8 /* ProductDetailViewController.swift in Sources */,
 				78AA050F2706785300F31EC8 /* ProductDetailPresenter.swift in Sources */,
@@ -369,6 +415,8 @@
 				78AA0487270590E000F31EC8 /* Presenterable.swift in Sources */,
 				78AA04A2270592FB00F31EC8 /* ProductsRouter.swift in Sources */,
 				78AA05012706688400F31EC8 /* Product.swift in Sources */,
+				78AA05302706B0D900F31EC8 /* BarcodeScannerRouter.swift in Sources */,
+				78AA052D2706B0D900F31EC8 /* BarcodeScannerPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +424,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78AA056E2709277400F31EC8 /* ProductsViewController.swift in Sources */,
+				78AA056A2709277100F31EC8 /* ProductsRouter.swift in Sources */,
+				78AA05622709276500F31EC8 /* ProductsPresenter.swift in Sources */,
+				78AA055B2709275700F31EC8 /* ProductsPresenterTests.swift in Sources */,
+				78AA05662709276E00F31EC8 /* ProductsInteractor.swift in Sources */,
 				78AA046227058FA300F31EC8 /* TWGProductsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,7 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S25Q5E9H6A;
 				INFOPLIST_FILE = TWGProducts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -565,7 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S25Q5E9H6A;
 				INFOPLIST_FILE = TWGProducts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (

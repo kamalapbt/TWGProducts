@@ -9,5 +9,5 @@ import Foundation
 
 protocol Interactorable {
     associatedtype P
-    var presenter: P {get set}
+    var output: P {get set}
 }
