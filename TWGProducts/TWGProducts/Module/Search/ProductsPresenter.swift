@@ -29,8 +29,10 @@ class ProductsPresenter: Presenterable {
     }
     
     func onSelectProduct(withItem item: Item) {
-        let selectedEntity = Product(withBarcode: item.products!.first!.barcode, description: item.description, imageUrl: item.products?.first?.imageUrl ?? nil, price: nil)
-        router!.presentDetail(forEntity: selectedEntity)
+        if let firstItem = item.products?.first {
+            let selectedEntity = Product(withBarcode: firstItem.barcode, description: item.description, imageUrl: item.products?.first?.imageUrl ?? nil, price: nil)
+            router!.presentDetail(forEntity: selectedEntity)
+        }
     }
     
     func showScanner() {

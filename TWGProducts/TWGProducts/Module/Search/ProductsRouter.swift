@@ -28,13 +28,27 @@ class ProductsRouter: Routerable {
     }
     
     func presentDetail(forEntity item: Product) {
-        let detailRouter: ProductDetailRouter = ProductDetailRouter(withEntity: item)
-        entry!.navigationController?.pushViewController(detailRouter.entry!, animated: true)
+        guard let entryView = entry else {
+            print("ProductsRouter view is not set")
+            return
+        }
+        guard let detailRouter = ProductDetailRouter(withEntity: item).entry else {
+            print("ProductDetailRouter view is not set")
+            return
+        }
+        entryView.navigationController?.pushViewController(detailRouter, animated: true)
     }
     
     func presentBarcodeScanner() {
-        let barcodeScannerRouter: BarcodeScannerRouter = BarcodeScannerRouter()
-        let nav = UINavigationController(rootViewController: barcodeScannerRouter.entry!)
-        entry!.present(nav, animated: true, completion: nil)
+        guard let entryView = entry else {
+            print("ProductsRouter view is not set")
+            return
+        }
+        guard let barcodeScannerView = BarcodeScannerRouter().entry else {
+            print("BarcodeScannerRouter view is not set")
+            return
+        }
+        let nav = UINavigationController(rootViewController: barcodeScannerView)
+        entryView.present(nav, animated: true, completion: nil)
     }
 }

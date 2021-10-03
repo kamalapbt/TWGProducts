@@ -29,8 +29,15 @@ class BarcodeScannerRouter: Routerable {
     }
     
     func presentDetail(forBarcode item: Product) {
-        let detailRouter: ProductDetailRouter = ProductDetailRouter(withEntity: item)
-        self.entry!.navigationController?.pushViewController(detailRouter.entry!, animated: true)
+        guard let entryView = self.entry else {
+            print("BarcodeScannerRouter view is not set")
+            return
+        }
+        guard let detailRouter = ProductDetailRouter(withEntity: item).entry else {
+            print("ProductDetailRouterRoot viewcontroller is not set")
+            return
+        }
+        entryView.navigationController?.pushViewController(detailRouter, animated: true)
     }
     
     func showAlert(for error: Error) {
